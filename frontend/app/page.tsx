@@ -12,7 +12,6 @@ import {
 import CompactRealDashboard from '@/components/CompactRealDashboard'
 import LendingPanel from '@/components/LendingPanel'
 import StressEventButton from '@/components/StressEventButton'
-import WithdrawPanel from '@/components/WithdrawPanel'
 import WalletConnect from '@/components/WalletConnect'
 import UIMockTokenMinter from '@/components/UIMockTokenMinter'
 import { PriorityScoreDisplay } from '@/components/PriorityScoreDisplay' 
@@ -29,7 +28,7 @@ import {
 import { parseUnits, formatUnits } from '@/lib/hooks/useEthersTransaction'
 import { BrowserProvider, Contract } from 'ethers'
 
-type TabType = 'dashboard' | 'deposit' | 'lending' | 'stress' | 'withdraw'
+type TabType = 'dashboard' | 'deposit' | 'lending' | 'stress'
 
 interface SystemStatus {
   isReady: boolean;
@@ -690,7 +689,6 @@ const handleDeposit = async () => {
     { id: 'deposit' as TabType, label: 'Deposit', icon: DollarSign },
     { id: 'lending' as TabType, label: 'Lending', icon: Banknote },
     { id: 'stress' as TabType, label: 'Stress Test', icon: AlertTriangle },
-    { id: 'withdraw' as TabType, label: 'Withdraw', icon: LogOut },
   ] as const
   
   const TabContent = () => {
@@ -1053,8 +1051,6 @@ const handleDeposit = async () => {
         return <LendingPanel />
       case 'stress':
         return <StressEventButton />
-      case 'withdraw':
-        return <WithdrawPanel />
       default:
         return <CompactRealDashboard />
     }

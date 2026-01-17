@@ -1031,7 +1031,7 @@ const handleDepositToLending = async () => {
   </div>
 </div>
 
-          {/* Your Tokens */}
+          {/* Your Tokens - REMOVED THE POOL LP TOKENS SECTION */}
           <div className="mb-4">
             <h3 className="text-sm font-medium mb-2">Your Tokens</h3>
             <div className="grid grid-cols-2 gap-3 mb-3">
@@ -1051,13 +1051,14 @@ const handleDepositToLending = async () => {
               </div>
             </div>
             
-            <div className="p-3 rounded-xl border border-cyan-500/30 bg-cyan-900/10 mb-3">
+            {/* REMOVED THIS ENTIRE SECTION */}
+            {/* <div className="p-3 rounded-xl border border-cyan-500/30 bg-cyan-900/10 mb-3">
               <div className="flex items-center gap-2 mb-1">
                 <Building2 className="w-4 h-4 text-cyan-400" />
                 <span className="font-medium">Pool LP Tokens</span>
               </div>
               <div className="text-lg font-bold text-cyan-300">{userTokens.lpTokens}</div>
-            </div>
+            </div> */}
             
             {parseFloat(userTokens.lpTokens) > 0 && (
               <div className="mb-4 p-3 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
