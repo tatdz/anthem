@@ -18,6 +18,28 @@ Real-time adjustments via CoreWriterOracle using:
 - 🎯 Priority score k_t (42 current)
 
 ---
+CoreWriterOracle implements two key Hyperliquid interfaces:
+
+solidity
+// 1. L1Read Interface - For reading Hyperliquid data
+interface IL1Read {
+    struct AccountMarginSummary {
+        int64 accountValue;
+        uint64 marginUsed;  // Current: 750,000 (75% usage)
+        uint64 ntlPos;
+        int64 rawUsd;
+    }
+    
+    function accountMarginSummary(uint32 perp_dex_index, address user) 
+        external view returns (AccountMarginSummary memory);
+    
+    function oraclePx(uint32 index) external view returns (uint64);
+}
+
+// 2. CoreWriter Interface - For sending actions to Hyperliquid
+interface ICoreWriter {
+    function sendRawAction(bytes calldata data) external;
+}
 
 ### Communication Flow
 
