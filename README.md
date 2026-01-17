@@ -20,7 +20,7 @@ Real-time adjustments via CoreWriterOracle using:
 ---
 CoreWriterOracle implements two key Hyperliquid interfaces:
 
-solidity
+
 // 1. L1Read Interface - For reading Hyperliquid data
 interface IL1Read {
     struct AccountMarginSummary {
