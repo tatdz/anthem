@@ -1,0 +1,59 @@
+// lib/constants.ts
+export const CONTRACT_ADDRESSES = {
+  // LIVE DEPLOYED CONTRACTS
+  ANTHEM_VAULT: process.env.NEXT_PUBLIC_ANTHEM_VAULT!,
+  ANTHEM_SENIOR: process.env.NEXT_PUBLIC_ANTHEM_SENIOR!, 
+  ANTHEM_JUNIOR: process.env.NEXT_PUBLIC_ANTHEM_JUNIOR!, 
+  SOVEREIGN_POOL: process.env.NEXT_PUBLIC_SOVEREIGN_POOL!,
+  COREWRITER_ORACLE: process.env.NEXT_PUBLIC_COREWRITER_ORACLE!,
+  MOCK_CORE_WRITER: process.env.NEXT_PUBLIC_MOCK_CORE_WRITER!, 
+  MOCK_L1_READ: process.env.NEXT_PUBLIC_MOCK_L1_READ!, 
+  V4_SWAP_EXECUTOR: process.env.NEXT_PUBLIC_V4_SWAP_EXECUTOR!,
+  REAL_LENDING: process.env.NEXT_PUBLIC_REAL_LENDING!,
+  
+  // UNISWAP V4 ARBITRUM SEPOLIA ADDRESSES
+  POOL_MANAGER: process.env.NEXT_PUBLIC_POOL_MANAGER!,
+  POSITION_MANAGER: process.env.NEXT_PUBLIC_POSITION_MANAGER!,
+  PERMIT2: process.env.NEXT_PUBLIC_PERMIT2!,
+  HOOK_ADDRESS: process.env.NEXT_PUBLIC_HOOK!,
+
+  // MOCK TOKENS
+  MOCK_BTC: process.env.NEXT_PUBLIC_MOCK_BTC!,
+  MOCK_ETH: process.env.NEXT_PUBLIC_MOCK_ETH!,
+  MOCK_USDC: process.env.NEXT_PUBLIC_MOCK_USDC!,
+  
+  // POOL IDs
+  POOL_BTC_USDC: process.env.NEXT_PUBLIC_POOL_KEY_BTC_USDC!,
+  POOL_ETH_USDC: process.env.NEXT_PUBLIC_POOL_KEY_ETH_USDC!,
+  
+  // POSITION IDs
+  POSITION_BTC_USDC: Number(process.env.NEXT_PUBLIC_POSITION_ID_BTC_USDC!),
+  POSITION_ETH_USDC: Number(process.env.NEXT_PUBLIC_POSITION_ID_ETH_USDC!),
+} as const;
+
+export const ARBITRUM_SEPOLIA = {
+  CHAIN_ID: 421614,
+  BLOCK_EXPLORER: "https://sepolia.arbiscan.io",
+  RPC_URL: process.env.ALCHEMY_ARBITRUM_TESTNET_URL || "https://sepolia-rollup.arbitrum.io/rpc",
+} as const;
+
+export const API_ENDPOINTS = {
+  ORACLE_STATUS: '/api/oracle/status',
+  ORACLE_UPDATE: '/api/oracle/update',
+  UNISWAP_DATA: '/api/uniswap-data',
+  STRESS_EVENTS: '/api/stress-events/generate',
+} as const;
+
+export const MAX_DEPOSIT = 0.1e6; // 0.1 USDC (6 decimals)
+
+// Uniswap V4 Configuration
+export const UNISWAP_V4_CONFIG = {
+  FEE_TIER: 3000, // 0.3%
+  TICK_SPACING: 60,
+  BTC_USDC_TICK: -302920,
+  ETH_USDC_TICK: -332860,
+  BTC_USDC_TICK_LOWER: -303480,
+  BTC_USDC_TICK_UPPER: -302280,
+  ETH_USDC_TICK_LOWER: -333420,
+  ETH_USDC_TICK_UPPER: -332220,
+} as const;

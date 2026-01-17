@@ -1,0 +1,44 @@
+{
+  "name": "anthem-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate-secrets": "tsx scripts/generate-secrets.ts",
+    "oracle:update": "curl -X GET 'http://localhost:3000/api/oracle/update' -H 'x-api-key: $ORACLE_API_KEY'",
+    "type-check": "tsc --noEmit",
+    "automate:swaps": "node scripts/swap-automation.js",
+    "dev:with-automation": "concurrently \"npm run dev\" \"npm run automate:swaps\" \"npm run verify\"",
+    "automation:watch": "nodemon scripts/swap-automation.js"
+  },
+  "dependencies": {
+    "@metamask/detect-provider": "^2.0.0",
+    "@tanstack/react-query": "^5.50.1",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.16.0",
+    "lucide-react": "^0.379.0",
+    "next": "^16.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.10.4",
+    "tailwindcss": "^3.4.0",
+    "viem": "^2.21.0",
+    "wagmi": "^2.13.0",
+    "web3": "^4.3.0",
+    "web3-eth-accounts": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.28",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.11",
+    "postcss": "^8.4.38",
+    "tsx": "^4.19.2",
+    "typescript": "^5.4.5"
+  }
+}
