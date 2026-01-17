@@ -100,3 +100,5 @@ Risk-adjusted lending with ADL-adjusted LTV (32-38%).
 
 ### 6. V4 Swap Executor (0xb8aD836c8a31Dc7fD842b4b328f39f3d3aa6F781)
 Creates stress events for CoreWriterOracle in Uniswap V4 BTC/USDC and ETH/USDC pools.
+
+<img src="anthem.png" alt="User Flow Diagram" width="800" style="max-width: 100%; height: auto;">
