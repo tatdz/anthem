@@ -1,9 +1,8 @@
-// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   
-  // Environment variables that should be available on both server and client
+  // Client env vars
   env: {
     NEXT_PUBLIC_ALCHEMY_ARBITRUM_TESTNET_URL: process.env.NEXT_PUBLIC_ALCHEMY_ARBITRUM_TESTNET_URL,
     NEXT_PUBLIC_COREWRITER_ORACLE: process.env.NEXT_PUBLIC_COREWRITER_ORACLE,
@@ -11,18 +10,13 @@ const nextConfig = {
     NEXT_PUBLIC_CRON_SECRET: process.env.NEXT_PUBLIC_CRON_SECRET,
   },
   
-  // Server-only environment variables (won't be exposed to browser)
-  serverRuntimeConfig: {
-    ALCHEMY_ARBITRUM_TESTNET_URL: process.env.ALCHEMY_ARBITRUM_TESTNET_URL,
-    PRIVATE_KEY: process.env.PRIVATE_KEY,
-    CRON_SECRET: process.env.CRON_SECRET,
-    WS_URL: process.env.WS_URL,
-  },
-  
-  // Fixed the experimental config (serverComponentsExternalPackages moved to top level)
+  // Server packages
   serverExternalPackages: ['viem', '@wagmi/core', 'ethers', 'dotenv'],
   
-  // Webpack configuration for ethers.js
+  // Silence Turbopack webpack warning
+  turbopack: {},
+  
+  // Keep webpack config (Turbopack will ignore it safely)
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {
@@ -35,10 +29,10 @@ const nextConfig = {
         os: require.resolve('os-browserify/browser'),
         http: require.resolve('stream-http'),
         https: require.resolve('https-browserify'),
-      }
+      };
     }
-    return config
+    return config;
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

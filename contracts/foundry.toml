@@ -1,0 +1,40 @@
+[profile.default]
+src = 'src'
+out = 'out'
+libs = ['lib']
+test = 'test'
+cache = true
+cache_path = 'cache'
+solc_version = '0.8.26'
+via_ir = true
+
+remappings = [
+    "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+    "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+    "@openzeppelin-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+    "solmate/=lib/solmate/src/",
+    "@solmate/=lib/solmate/src/",
+    "@uniswap/v3-core/=lib/v3-core/",
+    "@uniswap/v4-core/=lib/v4-core/",
+    "@uniswap/v4-periphery/=lib/v4-periphery/",
+    "@uniswap/v4-template/=lib/v4-template/",
+    "permit2/=lib/v4-periphery/lib/permit2/",
+    "forge-std/=lib/v4-core/lib/forge-std/",
+    "ds-test/=lib/solmate/lib/ds-test/src/"
+]
+
+optimizer = true
+optimizer_runs = 1000000
+bytecode_hash = 'ipfs'
+cbor_metadata = true
+verbosity = 1
+
+[rpc_endpoints]
+arbitrum_sepolia = "${ALCHEMY_ARBITRUM_TESTNET_URL}"
+hyperliquid_testnet = "https://testnet-rpc.hyperliquid.xyz/evm"
+mainnet = "https://eth.llamarpc.com"
+
+[etherscan]
+arbitrum_sepolia = { key = "${ARBISCAN_API_KEY}", url = "https://api-sepolia.arbiscan.io/api" }
+hyperliquid_testnet = { key = "${ETHERSCAN_API_KEY}", url = "https://testnet-explorer.hyperliquid.xyz/api" }
