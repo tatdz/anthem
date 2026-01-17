@@ -10,7 +10,22 @@ $47B weekly volume vs $372M TVL creates a **126x gap** where all LPs suffer equa
 ---
 
 ## ⚡ Solution: Dynamic Risk Tranching
-**70-85% Senior (Protected) + 15-30% Junior (Risk Premium)**
+**High stress →  59% Senior /41% Junior (up to 50/50, protected) | Normal → ca. 85% Senior /15% Junior**
+**Senior tranche is protected, junior tranche pays risk premium**
+
+
+Anthem Senior Tranche
+What it is: A priority pool that is structurally protected from direct liquidation and ADL losses by routing those first to the Junior tranche.
+Earns: Protocol fees + Valantis swap fees; target yield could sit in the single‑digit APY range depending on market conditions (illustratively 7–10% APY).
+Protected from: Modeled liquidation shortfalls and ADL over‑collection, up to the capacity of the Junior tranche and any insurance buffers.
+For: Conservative LPs who want directional exposure to HLP fees without full tail‑risk from manipulation incidents
+
+Anthem Junior Tranche 
+What it is: A first‑loss pool that explicitly sells protection against liquidation gaps and ADL waste.
+Earns: Higher baseline yield (e.g., targeting 20–25% APY in normal conditions) plus performance fees when tail events are mild.
+Pays out: When CoreWriter detects that ADL / liquidation losses stayed below a threshold (e.g., “queue waste <20%”), Juniors keep more of the fee stream; when losses spike, Juniors absorb them.
+For: Risk‑tolerant LPs who want to long HLP’s structural profitability and short its tail events.
+
 
 Real-time adjustments via CoreWriterOracle using:
 - ✅ Uniswap V4 stress (live)
