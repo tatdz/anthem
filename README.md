@@ -1,5 +1,5 @@
 # Anthem: Hyperliquid-Powered Risk Tranching
-**Live on Arbitrum Sepolia · Solves HLP's $20M ADL Waste Problem**
+**Live on Arbitrum Sepolia for testing, Hyperliquid-ready· Solves HLP's $20M ADL Waste Problem**
 
 ---
 
