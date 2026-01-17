@@ -21,7 +21,7 @@ Real-time adjustments via CoreWriterOracle using:
 CoreWriterOracle implements two key Hyperliquid interfaces:
 
 
-// 1. L1Read Interface - For reading Hyperliquid data
+1. L1Read Interface - For reading Hyperliquid data
 interface IL1Read {
     struct AccountMarginSummary {
         int64 accountValue;
@@ -36,7 +36,7 @@ interface IL1Read {
     function oraclePx(uint32 index) external view returns (uint64);
 }
 
-// 2. CoreWriter Interface - For sending actions to Hyperliquid
+2. CoreWriter Interface - For sending actions to Hyperliquid
 interface ICoreWriter {
     function sendRawAction(bytes calldata data) external;
 }
