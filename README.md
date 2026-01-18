@@ -1,4 +1,4 @@
-# Anthem: Hyperliquid-Powered Risk Tranching
+# Anthem: Hyperliquid-Powered Risk Tranching with dynamic yield farming via lending.
 **Live on Arbitrum Sepolia for testing, Hyperliquid-ready· Solves HLP's $20M ADL Waste Problem**
 
 ---
@@ -85,6 +85,7 @@ SovereignPool implements Valantis interfaces:
 - `depositLiquidity()` / `withdrawLiquidity()`
 - 0.3% pool fees with ALM management
 - Compatible with Valantis ecosystem
+- Lending Module for lending on Aave that creates a leverage loop: our Anthem LP tokens serve as collateral for borrowing, allowing users to re-deposit and amplify positions. This transforms static liquidity provision into dynamic yield farming
 
 ---
 
