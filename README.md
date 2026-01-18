@@ -150,9 +150,9 @@ NEXT_PUBLIC_UI_MOCK_BTC=0x8C46d0f2D9822DbdE9794460712f50b3b69BD6d9
 
 ALCHEMY_ARBITRUM_TESTNET_URL=https://arb-sepolia.g.alchemy.com/v2/-yourkey
 CHAIN_ID=421614
-
+PRIVATE_KEY=yourprivatekey
 NEXT_PUBLIC_ENABLE_INJECTED_ONLY=true
 
 
-### 4.run via terminal
+### 4.use Metamask wallet and run via terminal
 in cd/frontend: npm run dev:with-automation
