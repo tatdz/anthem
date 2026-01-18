@@ -81,11 +81,11 @@ interface ICoreWriter {
 ---
 
 ## 🔧 Valantis Integration
-SovereignPool implements Valantis interfaces:
+Anthem's SovereignPool based on SovereignPool of Valantis and implements its interfaces and logic:
 - `depositLiquidity()` / `withdrawLiquidity()`
 - 0.3% pool fees with ALM management
-- Compatible with Valantis ecosystem
 - Lending Module for lending on Aave that creates a leverage loop: our Anthem LP tokens serve as collateral for borrowing, allowing users to re-deposit and amplify positions. This transforms static liquidity provision into dynamic yield farming
+- - Compatible with Valantis ecosystem
 
 ---
 
