@@ -97,7 +97,7 @@ Accepts USDC deposits, dynamically splits into Senior/Junior tokens based on k_t
 ### 2. CoreWriterOracle (0xA98BE8D7896C26edD7166b6F046026Aa8F8b8C37)
 Central risk engine that:
 - Processes V4 swap stress events
-- Integrates with Hyperliquid mocks
+- Integrates with Hyperliquid mocks (MockL1Read 0x86cA01b5a3898750013C816aCcda2238506D608A and MockCoreWriter 0x2463CD6E16Ea28E76D646c7f56288a7Cb263F05A)
 - Calculates priority score (k_t: 0-100)
 - Adjusts tranche ratios (85% → 72% → 70%)
 - Updates LTV (32-38% range)
